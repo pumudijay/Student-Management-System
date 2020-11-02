@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class StudentController {
@@ -18,13 +19,9 @@ public class StudentController {
         return studentService.getAllStudents();
     }
 
-   @RequestMapping(value="/students", params="name")
-    public Student getStudent(@RequestParam String name){
-        return studentService.getStudent(name);
-    }
 
-    @RequestMapping(value="/students", params="id")
-    public Student getStudent(@RequestParam Integer id){
+    @RequestMapping("/students/{id}")
+    public Optional<Student> getStudent(@PathVariable Integer id){
         return studentService.getStudent(id);
     }
 

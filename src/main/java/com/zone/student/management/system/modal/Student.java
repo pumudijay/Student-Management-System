@@ -1,12 +1,19 @@
 package com.zone.student.management.system.modal;
 
-import java.time.LocalDate;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
+@Entity
 public class Student {
+
+    @Id
     private Integer studentId;
     private String studentFirstName;
     private Integer age;
     private String address;
+
+    public Student() {
+    }
 
     public Student(Integer studentId, String studentFirstName, Integer age, String address) {
         this.studentId = studentId;
