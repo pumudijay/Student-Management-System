@@ -17,11 +17,6 @@ public class StudentService {
     @Autowired
     private StudentRepository studentRepository;
 
-    private List<Student> students = new ArrayList<>(Arrays.asList(
-            new Student(1,"Kamal",30,"12/B, High Level Road, Maharagama"),
-            new Student(2,"Mala",22, "20,Colombo 07")
-    ));
-
     public List<Student> getAllStudents(){
         //return students;
         List<Student> students = new ArrayList<>();
